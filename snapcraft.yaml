@@ -12,6 +12,7 @@ apps:
     command: usr/bin/gnome-info-collect
     environment:
       PATH: $SNAP/usr/bin:$SNAP/bin:$PATH
+      LD_LIBRARY_PATH: $SNAP/lib/systemd:$LD_LIBRARY_PATH
 
 parts:
   gnome-info-collect:
