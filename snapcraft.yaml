@@ -1,0 +1,42 @@
+name: gnome-info-collect
+adopt-info: gnome-info-collect
+summary: GNOME Info Collect
+description: |
+  A simple utility to collect system information.
+grade: stable
+confinement: classic
+base: core22
+
+apps:
+  gnome-info-collect:
+    command: usr/bin/gnome-info-collect
+    environment:
+      PATH: $SNAP/usr/bin:$SNAP/bin:$PATH
+
+parts:
+  gnome-info-collect:
+    source: https://gitlab.gnome.org/vstanek/gnome-info-collect.git
+    source-type: git
+    plugin: meson
+    meson-parameters:
+      - --prefix=/usr
+    build-packages:
+      - meson
+    override-pull: |
+      craftctl default
+      craftctl set version=$(git describe --tags --abbrev=10)        
+
+  libraries:
+    plugin: nil
+    stage-packages:
+      - gir1.2-accountsservice-1.0
+      - gir1.2-glib-2.0
+      - gir1.2-goa-1.0
+      - gir1.2-malcontent-0
+      - gnome-settings-daemon-common
+      - gnome-shell-common
+      - gsettings-desktop-schemas
+      - mutter-common
+      - python3-gi
+      - python3-requests
+      - systemd
