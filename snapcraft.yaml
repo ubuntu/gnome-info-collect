@@ -42,3 +42,9 @@ parts:
       - python3-requests
       - systemd
       - libffi8
+    prime:
+      - -usr/bin
+      - -bin
+      - -usr/libexec
+      - -lib/systemd/system*
+      - -usr/lib/systemd/user*
