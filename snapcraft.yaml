@@ -41,3 +41,4 @@ parts:
       - python3-gi
       - python3-requests
       - systemd
+      - libffi8
