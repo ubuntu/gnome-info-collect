@@ -42,6 +42,7 @@ parts:
       - python3-requests
       - systemd
       - libffi8
+      - libglib2.0-0
     prime:
       - -usr/bin
       - -bin
