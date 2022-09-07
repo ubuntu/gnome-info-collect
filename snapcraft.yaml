@@ -13,6 +13,8 @@ apps:
     environment:
       PATH: $SNAP/usr/bin:$SNAP/bin:$PATH
       LD_LIBRARY_PATH: $SNAP/lib/systemd:$LD_LIBRARY_PATH
+      GIO_MODULE_DIR: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gio/modules
+      GI_TYPELIB_PATH: $SNAP/usr/lib/$ARCH/girepository-1.0:$SNAP/usr/lib/girepository-1.0
 
 parts:
   gnome-info-collect:
